@@ -16,7 +16,7 @@ const ModuleRouter = () => {
 
   if (!ModuleComponent) {
     return (
-      <div className="p-8">
+      <div>
         <h1 className="text-2xl font-bold">Module not found</h1>
         <p>Module "{moduleId}" does not exist.</p>
       </div>

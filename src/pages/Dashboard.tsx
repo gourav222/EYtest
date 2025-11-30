@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../components/ui/Card";
+import { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 const modules = [
   {
     name: "Module A",
@@ -23,6 +25,14 @@ const modules = [
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [cookies] = useCookies(['cookie-name']);
+  console.log("Cookies:", cookies);
+  useEffect(() => {
+    
+    if (!cookies['cookie-name']) {
+      navigate("/");
+    }
+  },[])
   return (
     <div className="w-full h-full flex flex-col m-0 p-0 items-center justify-center flex-col gap-4">
       <div className="h-[100%] w-[80%] flex flex-row gap-4">

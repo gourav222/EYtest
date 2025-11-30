@@ -14,6 +14,10 @@ export const ROUTES = {
   },
   MODULE_B: {
     BASE: "/dashboard/module-b",
+    FORM_1: "/dashboard/module-b/form-1",
+    FORM_1_STEPS: {
+      STEP_1: "/dashboard/module-b/form-1/step-1"
+    },
   },
   MODULE_C: {
     BASE: "/dashboard/module-c",

@@ -1,4 +1,6 @@
-const Tab2 = () => {
+const Tab2 = ({ tabChange }: { tabChange: { id: string } }) => {
+  const { id } = tabChange;
+  console.log("Tab2 received id:", id);
   return (
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">

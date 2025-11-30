@@ -1,8 +1,13 @@
+import { useState } from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   console.log("Login");
   const navigate = useNavigate();
+  const [email, setEmail]= useState("");
+  const [password, setPassword] = useState("");
+  const [, setCookie] = useCookies(['cookie-name']);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="w-full max-w-md">
@@ -33,6 +38,8 @@ const Login = () => {
               <input
                 id="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white focus:bg-white placeholder:text-gray-400"
               />
@@ -56,6 +63,8 @@ const Login = () => {
               </div>
               <input
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 placeholder="Enter your password"
                 className="w-full px-4 py-3.5 rounded-xl border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white focus:bg-white placeholder:text-gray-400"
@@ -83,6 +92,7 @@ const Login = () => {
               className="w-full px-4 py-3.5 rounded-xl text-base font-semibold cursor-pointer bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0"
               onClick={(e) => {
                 e.preventDefault();
+                setCookie('cookie-name', 'cookie-value');
                 navigate("/dashboard");
               }}
             >

@@ -22,7 +22,7 @@ const navItems: NavItem[] = [
 
 const ModuleA = () => {
   return (
-    <div className="flex">
+    <div className="flex" style={{borderWidth: 1, marginTop: -32}}>
       <Navbar navItems={navItems} />
       <div className="flex-1 ml-64">
         <Routes>
